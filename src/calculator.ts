@@ -23,6 +23,14 @@ class Calculator{
     logMessage(message:string){
         console.log(message)
     }
+
+    asyncFunctionPromise(){
+        return new Promise((resolve,rej)=>{
+            setTimeout(()=>{
+                resolve(4)
+            },1000)
+        })
+    }
 }
 
 export default Calculator
