@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import Calculator from "../src/calculator";
-describe.only("async await and promise test suit", ()=>{
+describe("async await and promise test suit", ()=>{
     let cal: Calculator;
     it("Should work with async and await",async()=>{
         //arrange

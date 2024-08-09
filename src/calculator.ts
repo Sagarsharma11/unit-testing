@@ -1,35 +1,43 @@
-class Calculator{
-    add(a:number, b:number){
+import axios from "axios";
+
+class Calculator {
+    add(a: number, b: number) {
         this.logMessage("Logging add function")
         const c = this.getRandomValue();
         // return a+b+c
-        return a+b
+        return a + b
     }
-    subtract(a:number, b:number){
+    subtract(a: number, b: number) {
         this.logMessage("Logging subtract function")
-        return a-b
+        return a - b
     }
-    multiply(a:number, b:number){
-        return a*b
+    multiply(a: number, b: number) {
+        return a * b
     }
-    divide(a:number, b:number){
-        if(b === 0)
+    divide(a: number, b: number) {
+        if (b === 0)
             throw new Error("Can't divide by zero")
-        return a/b
+        return a / b
     }
-    getRandomValue():number{
-        return Math.floor(Math.random()*10+1)
+    getRandomValue(): number {
+        return Math.floor(Math.random() * 10 + 1)
     }
-    logMessage(message:string){
+    logMessage(message: string) {
         console.log(message)
     }
 
-    asyncFunctionPromise(){
-        return new Promise((resolve,rej)=>{
-            setTimeout(()=>{
+    asyncFunctionPromise() {
+        return new Promise((resolve, rej) => {
+            setTimeout(() => {
                 resolve(4)
-            },1000)
+            }, 1000)
         })
+    }
+    async getUser() {
+        return await axios.get("https://jsonplaceholder.typicode.com/users/1")
+    }
+    async saveUser(userPayload:any) {
+        return await axios.post("https://jsonplaceholder.typicode.com/users", userPayload)
     }
 }
 
