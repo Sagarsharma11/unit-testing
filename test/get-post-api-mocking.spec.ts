@@ -2,7 +2,7 @@ import { expect } from "chai";
 import Calculator from "../src/calculator"
 import nock from "nock";
 const baseUrl = "https://jsonplaceholder.typicode.com"
-describe.only("Api Testing",()=>{
+describe("Api Testing",()=>{
     it("should make a Get request from api", async ()=>{
         //arrange
         const cal = new Calculator();
